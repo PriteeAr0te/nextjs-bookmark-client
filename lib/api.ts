@@ -1,18 +1,13 @@
-export const api = async(url:string, options: RequestInit = {}) => {
-    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+import axios from "axios";
 
-    const res = await fetch (`${process.env.NEXT_PUBLIC_API_URL}${url}`, {
-        ...options,
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: token ? `Bearer ${token}` : '',
-            ...(options.headers || {}),
-        },
-    });
+export const api = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
+});
 
-    if(!res.ok) {
-        throw new Error(`Api Error: ${res.status}`);
-    }
-
-    return res.json();
-}
+export const setAuthToken = (token: string | null) => {
+  if (token) {
+    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  } else {
+    delete api.defaults.headers.common["Authorization"];
+  }
+};

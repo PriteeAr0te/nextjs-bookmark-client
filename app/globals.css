@@ -1,2 +1,28 @@
 @import "tailwindcss";
 
+:root {
+    --background: #101922;
+    --primary: #137FEC;
+    --secondary: #192633;
+    --modal: #0F172A;
+    --accent: #233648;
+    --br: #324D67
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-modal: var(--modal);
+    --color-accent: var(--accent);
+    --color-br: var(--br);
+}
+
+body {
+    background-color: var(--background);
+    color: white;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
