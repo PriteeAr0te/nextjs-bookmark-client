@@ -6,7 +6,7 @@
     --secondary: #192633;
     --modal: #0F172A;
     --accent: #233648;
-    --br: #324D67
+    --brdr: #324D67
 }
 
 @theme {
@@ -15,7 +15,7 @@
     --color-secondary: var(--secondary);
     --color-modal: var(--modal);
     --color-accent: var(--accent);
-    --color-br: var(--br);
+    --color-brdr: var(--brdr);
 }
 
 body {
