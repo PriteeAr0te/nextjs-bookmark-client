@@ -49,6 +49,11 @@ const LoginForm: React.FC<LoginFormProps> = ({
         Log In
       </button>
       {error && <p className='text-red-500 mt-2'>{error}</p>}
+
+      <div className='m-3 w-full text-center text-gray-300'>
+        Don&apos;t have an account? <Link href='/register' className='text-primary hover:underline'>Register</Link>
+      </div>
+
     </form>
   )
 }

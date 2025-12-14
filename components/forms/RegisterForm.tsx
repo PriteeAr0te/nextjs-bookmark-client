@@ -1,6 +1,7 @@
 import { Bookmark } from 'lucide-react'
 import React from 'react'
 import InputComponent from '../ui/InputComponent'
+import Link from 'next/link'
 
 interface RegisterFormProps {
   formData: {
@@ -47,6 +48,9 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
         Register
       </button>
       {error && <p className='text-red-500 mt-2'>{error}</p>}
+      <div className='mt-3 w-full text-gray-300 text-center'>
+    Already have account? <Link className='text-primary hover:underline' href='/login'>Login</Link>
+      </div>
     </form>
   )
 }
